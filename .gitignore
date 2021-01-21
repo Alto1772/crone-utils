@@ -1,0 +1,14 @@
+__pycache__/
+
+# maps dir
+/maps/data/*.imgs
+/maps/data/*.dat
+/maps/caches
+
+# skins dir
+/skins/datas/*/*.dat
+/skins/datas/*/missing
+/skins/datas/*/conf
+/skins/imgs/*/*.png
+/skins/imgs/*/conf
+
