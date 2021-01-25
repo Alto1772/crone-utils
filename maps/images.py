@@ -61,7 +61,7 @@ def main():
         if os.path.isfile(str(waf.id) + '.imgs'): continue
 
         for idd in range(len(duf)):
-            print(f'> Downloading #{idd+1}')
+            print(f'> Downloading #{idd} ({duf.previews[idd]!r})')
             try: duf.dlimg(idd, rsess)
             except requests.exceptions.ConnectionError as e:
                 print(e)
