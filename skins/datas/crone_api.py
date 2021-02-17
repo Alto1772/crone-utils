@@ -1,6 +1,5 @@
 import reqbase
 import requests
-import json.decoder
 
 api_url = "https://www.worldofskins.org/project/api.php"
 accesstoken = "vmU^8UdW&k#dJY*Bg4CgN&H#kCxR44a="

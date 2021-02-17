@@ -1,8 +1,9 @@
 import requests
 import logging
+import json.decoder
 
 # this version of the scripts
-version = '1.0.1'
+version = '1.0.2'
 
 # user agent
 useragent = "YourServersSuck/{}".format(version)

@@ -14,7 +14,10 @@ def download(sess, type, id):
     except requests.exceptions.ConnectionError: return 0
     except requests.exceptions.Timeout: return 1
     if args['debug']: print(rq)
-    if isinstance(rq, str) or rq.get('response') == '500': return (rq, False)
+    if isinstance(rq, str) or rq.get('response') == '500':
+        print('String returned:')
+        print(rq)
+        return (rq, False)
     else: return (rq, True)
 
 encoding = 'utf-8'
