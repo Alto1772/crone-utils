@@ -3,7 +3,7 @@ import logging
 import json.decoder
 
 # this version of the scripts
-version = '1.0.2'
+version = '1.0.3'
 
 # user agent
 useragent = "YourServersSuck/{}".format(version)
@@ -32,7 +32,7 @@ def get(url, sess, *, rparams={}, headers={}, accesstoken=None, raw=True, **para
     try:
         j = req.json()
     except json.decoder.JSONDecodeError:
-        raw = True
+        raw = False
     if raw: return j
     else: return req.text
 

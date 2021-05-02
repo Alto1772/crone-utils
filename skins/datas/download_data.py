@@ -14,7 +14,7 @@ def download(sess, type, id):
     except requests.exceptions.ConnectionError: return 0
     except requests.exceptions.Timeout: return 1
     if args['debug']: print(rq)
-    if isinstance(rq, str) or rq.get('response') == '500':
+    if not isinstance(rq, dict):
         print('String returned:')
         print(rq)
         return (rq, False)
