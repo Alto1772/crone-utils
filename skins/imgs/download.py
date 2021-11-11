@@ -3,6 +3,8 @@ import sys, os
 import requests
 import confutils
 
+MAX_RETRIES = 10
+
 gurl = ""
 gcurrnum = 0
 
@@ -27,7 +29,7 @@ def process():
     global gcurrnum
     retries = 0
     with requests.Session() as rsess, tqdm.tqdm(initial=gcurrnum) as bar:
-        while retries != 3:
+        while retries < MAX_RETRIES:
             try:
                 while download(rsess, gurl, gcurrnum):
                     bar.update()

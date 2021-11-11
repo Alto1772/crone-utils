@@ -99,18 +99,16 @@ def process(id, queuein, queueout, rsess):
             retries = 0
             tryagain = False
             queueout.put(id)
-        elif data == 1:
-            printcond(id, '! Request timed out.')
-            retries += 1
-            tryagain = True
-        elif data == 0:
-            printcond(id,'! Connection Error.')
-            retries += 1
-            tryagain = True
         else:
-            printcond(id, f'! {q}.png not found!')
+            if data is False:
+                printcond(id, f'! {q}.png not found!')
+            elif data == 1:
+                printcond(id, '! Request timed out.')
+            elif data == 0:
+                printcond(id,'! Connection Error.')
             retries += 1
-            tryagain = False
+            tryagain = True
+
         if retries == 10:
             printdbg(f'#{id}. > [STOPPED]')
             break
